@@ -10,6 +10,10 @@
 
 }
 
+*::selection{
+    background-color: #8EADD5;
+}
+
 body{
     background-color: #F5F5F5;
     font-size: 20px;
@@ -28,10 +32,12 @@ header{
     flex-direction: row;
     justify-content: space-between;
     padding: 50px 100px;
+    width: 100%;
 }
 
 header div p{
     font-weight: 600;
+    text-align: center;
 }
 
 
@@ -43,32 +49,40 @@ header div p{
 
 }
 
+.menu{
+    display:none;
+}
+
 
 /* Landing Page */
 
-.content{
+#hero {
+    background-color: var(--rtc-background-color);
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
-
-
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px;
+    gap: 20px;
 }
 
-.part1{
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.part1 h1{
-    font-size: 45px;
-}
-
-.part1,.part2{
-    width: 100%;
+/* izquierda */
+.info {
+    width: 40%;
+    min-width: 516px;
     height: auto;
-    padding: 100px;
+}
+
+/* derecha */
+#hero > img {
+    width: 30%;
+    max-width: 500px;
+    min-width: 300px;
+}
+
+.info > h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
 }
 
 .button{
@@ -78,6 +92,7 @@ header div p{
     width: 167px;
     height: 48px;
     border: 0;
+    margin-top: 30px;
 }
 
 .button a{
@@ -86,6 +101,33 @@ header div p{
 
 }
 
+@media (max-width: 570px) {
+    .info > h1 {
+        font-size: 30px;
+    }
+    .info {
+        width: 100%;
+        min-width: 0px;
+    }
+}
+
+@media (max-width:750px) {
+    .navigation{
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+}
+
+@media (max-width:420px) {
+    header div p{
+        font-size: 15px;
+    }
+    header{
+        padding: 20px 50px;
+    }
+}
 
 /* Sección Bottom Landing Page */
 
@@ -95,54 +137,60 @@ header div p{
     font-weight: 100;
     font-size: 13px;
     color: #667085;
+    margin-bottom: 20px;
 }
 
 .section-bottom{
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 
 }
 
 .companies{
-    background-color: #F6F6F6;
+    background-color: #c7c7c7;
     border-radius: 8px;
     display: flex;
-    justify-content:space-around;
-    gap: 80px;
+    justify-content:center;
     padding: 20px;
-
+    width: 70%;
+    gap: 10%;
 
 }
+
+.companies img{
+    min-width: 0%;
+    height: auto;
+
+}
+
 
 /* footer */
 
-footer{
-    background-color: #C7C7C7;
-    
-}
-.footer{
-
+footer {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    padding: 50px 100px;
+    padding: 50px;
+    justify-content: center;
+    gap: 50px;
     flex-wrap: wrap;
-    
 }
 
-.footer-nav li:first-child{
+ul {
     display: flex;
-    font-weight: 600;
-}
-
-.footer-nav{
-    display: flex;
+    align-items: center;
     flex-direction: column;
-    gap: 20px;
+    list-style: none;
+    width: 250px;
+    gap: 25px;
+    text-align: center;
 }
 
 .copyright{
     display: flex;
-    flex-direction: row;
     justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
 }
